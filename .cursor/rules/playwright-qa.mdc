@@ -1,0 +1,10 @@
+---
+description: Playwright QA locators, signup limits, seed layout, and CI boundaries
+alwaysApply: true
+---
+
+- Locators: getByRole, getByLabel, getByText for stable copy.
+- Do not assert Function Day prices ($295, $365) or the FUNCTIONDAY26 query code. That offer ends Oct 8, 2026. Assert Start testing lands on my.functionhealth.com and the path contains /signup.
+- Signup is production. Tests may open the signup page and check the form and empty-submit validation. They must not create an account, enter real personal or health data, or continue into payment.
+- Seed test is tests/seed.spec.ts tagged @seed. Suites are folders under tests/ (logged-out, registration).
+- CI runs deterministic Playwright only. Do not call planner, generator, or healer from CI.
