@@ -6,8 +6,11 @@
   "main": "index.js",
   "scripts": {
     "test:one": "node scripts/run.mjs one",
+    "test:one:headed": "node scripts/run.mjs one --headed",
     "test:suite": "node scripts/run.mjs suite",
+    "test:suite:headed": "node scripts/run.mjs suite --headed",
     "test:all": "node scripts/run.mjs all",
+    "test:all:headed": "node scripts/run.mjs all --headed",
     "test:ui": "playwright test --ui",
     "report": "playwright show-report"
   },

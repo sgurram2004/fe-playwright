@@ -1,8 +1,9 @@
 import { test, expect } from './fixtures';
 
-test('seed', { tag: '@seed' }, async ({ page }) => {
-  await page.goto('/');
-  await expect(page.getByRole('navigation', { name: 'Primary' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Log in' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Start testing' }).first()).toBeVisible();
+test('seed', { tag: '@seed' }, async ({ loggedOut }) => {
+  await loggedOut.openHome();
+
+  await expect(loggedOut.home.primaryNav).toBeVisible();
+  await expect(loggedOut.home.logIn).toBeVisible();
+  await expect(loggedOut.home.startTesting).toBeVisible();
 });

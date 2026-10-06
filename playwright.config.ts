@@ -8,7 +8,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [
     ['list'],
-    ['html', { open: 'never', outputFolder: 'playwright-report' }],
+    ['html', { open: 'never', outputFolder: 'playwright-report/playwright' }],
+    ['./reporters/fancy-html.ts'],
   ],
   use: {
     baseURL: process.env.BASE_URL || 'https://www.functionhealth.com',
