@@ -1,6 +1,7 @@
 import { test as base, expect } from '@playwright/test';
 import { HomePage } from '../pages/home.page';
 import { SignupPage } from '../pages/signup.page';
+import { FaqWorkflow } from '../workflows/faq.workflow';
 import { LoggedOutWorkflow } from '../workflows/logged-out.workflow';
 import { RegistrationWorkflow } from '../workflows/registration.workflow';
 
@@ -9,6 +10,7 @@ type AppFixtures = {
   signupPage: SignupPage;
   loggedOut: LoggedOutWorkflow;
   registration: RegistrationWorkflow;
+  faq: FaqWorkflow;
 };
 
 export const test = base.extend<AppFixtures>({
@@ -39,6 +41,9 @@ export const test = base.extend<AppFixtures>({
   },
   registration: async ({ page }, use) => {
     await use(new RegistrationWorkflow(page));
+  },
+  faq: async ({ page }, use) => {
+    await use(new FaqWorkflow(page));
   },
 });
 
