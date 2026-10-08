@@ -30,7 +30,7 @@ npm run test:all:headed
 
 Every test has a screenshot under `test-results/` and a browser console log. Both show on the results page. The full terminal log is `logs/latest.log`. The results page is `playwright-report/index.html`. The detailed Playwright trace report is `playwright-report/playwright/index.html`.
 
-Suites follow the site path: `tests/home` is `/`, and `tests/signup` is `/signup`.
+Suites follow the site path: `tests/home` is `/`, `tests/signup` is `/signup`, and `tests/faq` is `/faq`.
 
 `npm run test:ui` is for debugging. It is not the results page.
 
